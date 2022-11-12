@@ -14,7 +14,9 @@ from sklearn.preprocessing import MinMaxScaler
 
 
 def load_qt_data(dataset):
-    qt_tf = pd.read_csv(r'D:/Latest/T-GCN-master/data/merged_speed_road_data_travel_time_tt_matrix.csv')    # sz_tf = pd.read_csv(r'/home/abid/Desktop/Progress_report/rush_hours_matrix.csv')
+    #qt_tf = pd.read_csv(r'D:/Latest/T-GCN-master/data/merged_speed_road_data_travel_time_tt_matrix.csv')
+    qt_tf = pd.read_csv(r'D:/Latest/T-GCN-master/data/df_merged.csv') ### concatenate the two files in Dataset folder with pd.concat as df_merged = pd.concat([df_a, df_b], axis=1)
+
     return qt_tf
 
 def data_preprocessing(ds, ts, split_tr, len_hist, len_pred):
@@ -106,12 +108,12 @@ def eval_measure(target,predicted):
 approach = 'att_GRU' ### GRU or att_GRU
 dst_name = 'qt' ### dataset name 
 data_split_tr =  0.8 ### 80:20 ratio
-len_hist = 1 ### previous one hour i.e., 4
+len_hist = 4 ### previous one hour i.e., 4
 out_dimension = len_pred = 1 ### predicted upto 1 hour i.e., 4
-b_s = 8 ### 16,32,64
+b_s = 32 ### 16,32,64
 lr = 0.001 ### set to 0.001
-number_of_epochs = 2 ### set to 600
-hidden_units_gru = 2 ### 8,16,32,64,128
+number_of_epochs = 600 ### set to 600
+hidden_units_gru = 32 ### 8,16,32,64,128
 lambda_val = 0.0015  ### set to 0.0015
 
 ### Loading Dataset
