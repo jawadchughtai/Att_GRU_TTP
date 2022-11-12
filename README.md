@@ -12,6 +12,7 @@ The dataset used in this code can be obtained from the link given below:
 
 [Dataset](https://drive.google.com/file/d/1AN7nTsqZe3oPwZr4b5kEEq78HwiMCjMO/view?usp=sharing): This dataset contains 15,073 road segments covering approximately 738.91 km. They are all in the 6th ring road (bounded by the lon/lat box of <116.10, 39.69, 116.71, 40.18>), which is the most crowded area of Beijing. The traffic speed of each road segment is recorded per minute. To make the traffic speed predictable, for each road segment, we use simple moving average with a 15-minute time window to smooth the traffic speed sub-dataset and sample the traffic speed per 15 minutes. Thus, there are totally 5856 ($61 \times 24 \times 4$) time steps, and each record is represented as road_segment_id, time_stamp ([0, 5856)) and traffic_speed (km/h).
 
+To reproduce the results, a minimal anonymized 1 week sample data is provided in the [Sample](https://github.com/jawadchughtai/Att_GRU_TTP/tree/main/Dataset) foler. The output graph is also added in the output folder inside dataset folder.
 
 
 ## Code
